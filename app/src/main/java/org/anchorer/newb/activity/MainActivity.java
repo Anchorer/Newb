@@ -1,4 +1,4 @@
-package org.anchorer.newb;
+package org.anchorer.newb.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import org.anchorer.newb.activity.SecondActivity;
+import org.anchorer.newb.R;
 
 public class MainActivity extends AppCompatActivity {
 

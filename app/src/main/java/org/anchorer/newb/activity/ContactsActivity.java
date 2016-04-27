@@ -55,6 +55,7 @@ public class ContactsActivity extends AppCompatActivity {
                 int currentSize = mContactsAdapter.getItemCount();
                 mContactsList.addAll(Contact.getContactsList(PAGE_SIZE));
                 mContactsAdapter.notifyItemRangeInserted(currentSize, PAGE_SIZE);
+                mContactsRecyclerView.smoothScrollToPosition(currentSize);
             }
         });
     }
