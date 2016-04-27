@@ -6,12 +6,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 import android.widget.Button;
 
 import org.anchorer.newb.R;
 import org.anchorer.newb.adapter.ContactsAdapter;
 import org.anchorer.newb.model.Contact;
+import org.anchorer.newb.module.contacts.ContactsItemTouchCallback;
 
 import java.util.List;
 
@@ -44,6 +46,9 @@ public class ContactsActivity extends AppCompatActivity {
 
         mContactsList = Contact.getContactsList(20);
         mContactsAdapter = new ContactsAdapter(mContactsList);
+
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ContactsItemTouchCallback(mContactsAdapter));
+        itemTouchHelper.attachToRecyclerView(mContactsRecyclerView);
 
         mContactsRecyclerView.setAdapter(mContactsAdapter);
         mContactsRecyclerView.setLayoutManager(new LinearLayoutManager(this));

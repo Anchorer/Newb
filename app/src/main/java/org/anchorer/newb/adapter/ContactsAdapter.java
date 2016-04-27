@@ -52,6 +52,10 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
         return mContactsList.size();
     }
 
+    public List<Contact> getContactsList() {
+        return mContactsList;
+    }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView mNameView;
