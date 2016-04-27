@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">NewbApplication</string>
+    <string name="action_settings">Settings</string>
+    
+    <string name="transition_second">transition_second</string>
+
+    <string name="btn_add_contacts">ADD MORE CONTACTS</string>
+</resources>
