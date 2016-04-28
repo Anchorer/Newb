@@ -3,8 +3,6 @@ package org.anchorer.newb.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -13,6 +11,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import org.anchorer.newb.R;
+import org.anchorer.newb.module.contacts.ContactsTabsActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,10 +32,11 @@ public class MainActivity extends AppCompatActivity {
 //                        .setAction("Action", null).show();
 //                startActivity(new Intent(MainActivity.this, SecondActivity.class));
 
-                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                String transitionName = getString(R.string.transition_second);
-                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, textView, transitionName);
-                ActivityCompat.startActivity(MainActivity.this, intent, options.toBundle());
+//                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+//                String transitionName = getString(R.string.transition_second);
+//                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, textView, transitionName);
+//                ActivityCompat.startActivity(MainActivity.this, intent, options.toBundle());
+                startActivity(new Intent(MainActivity.this, ContactsTabsActivity.class));
             }
         });
     }

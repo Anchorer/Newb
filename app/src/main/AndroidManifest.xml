@@ -19,8 +19,15 @@
         </activity>
         <activity android:name=".activity.SecondActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".activity.ContactsActivity"
+        <activity android:name=".module.contacts.ContactsActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".module.contacts.ContactsTabsActivity"
+            android:theme="@style/AppTheme">
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
     </application>
 
 </manifest>

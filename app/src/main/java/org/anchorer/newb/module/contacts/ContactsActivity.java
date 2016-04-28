@@ -1,4 +1,4 @@
-package org.anchorer.newb.activity;
+package org.anchorer.newb.module.contacts;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
