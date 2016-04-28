@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,7 @@ public class ContactsFragment extends Fragment {
     private static final String FIELD_COUNT = "count";
 
     private RecyclerView mRecyclerView;
+    private ContactsAdapter mAdapter;
 
     public static ContactsFragment getInstance(int contactsCount) {
         ContactsFragment fragment = new ContactsFragment();
@@ -48,7 +50,13 @@ public class ContactsFragment extends Fragment {
     private void initRecyclerView() {
         // set LayoutManager
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
         // set Adapter
-        mRecyclerView.setAdapter(new ContactsAdapter(Contact.getContactsList(getArguments().getInt(FIELD_COUNT))));
+        mAdapter = new ContactsAdapter(Contact.getContactsList(getArguments().getInt(FIELD_COUNT)));
+        mRecyclerView.setAdapter(mAdapter);
+
+        // Add ItemTouchHelper
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ContactsItemTouchCallback(mAdapter));
+        itemTouchHelper.attachToRecyclerView(mRecyclerView);
     }
 }
